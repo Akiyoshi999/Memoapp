@@ -15,6 +15,12 @@
   "rules": {
     "no-use-before-define": 0,
     "semi": ["error", "never"],
-    "arrow-body-style": ["error", "always"]
+    "arrow-body-style": ["error", "always"],
+    "object-curly-newline": [
+      "error",
+      {
+        "ImportDeclaration": { "multiline": true, "minProperties": 5 }
+      }
+    ]
   }
 }
