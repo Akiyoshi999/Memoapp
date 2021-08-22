@@ -7,22 +7,39 @@ import {
   View,
 } from 'react-native'
 
-import AppBar from '../components/AppBar'
 import Button from '../components/Button'
 
-const LoginScreen = () => {
+const LoginScreen = (props) => {
+  const { navigation } = props
   return (
     <View style={styles.container}>
-      <AppBar />
       <View style={styles.inner}>
         <Text style={styles.title}>Log In</Text>
         <TextInput value="Email Address" style={styles.input} />
         <TextInput value="password" style={styles.input} />
-        <Button label="submit" />
+        <Button
+          label="submit"
+          onPress={() => {
+            navigation.reset({
+              index: 0,
+              routes: [{ name: 'MemoList' }],
+            })
+          }}
+        />
         <View style={styles.footer}>
           <Text style={styles.footerText}>Not registered?</Text>
           <TouchableOpacity>
-            <Text style={styles.footerLinks}>Sign up here!</Text>
+            <Text
+              style={styles.footerLinks}
+              onPress={() => {
+                navigation.reset({
+                  index: 0,
+                  routes: [{ name: 'SignUp' }],
+                })
+              }}
+            >
+              Sign up here!
+            </Text>
           </TouchableOpacity>
         </View>
       </View>

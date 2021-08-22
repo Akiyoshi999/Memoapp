@@ -1,6 +1,5 @@
 import React from 'react'
 import {
-  Alert,
   StyleSheet,
   Text,
   TextInput,
@@ -8,13 +7,12 @@ import {
   View,
 } from 'react-native'
 
-import AppBar from '../components/AppBar'
 import Button from '../components/Button'
 
-const SignUpScreen = () => {
+const SignUpScreen = (props) => {
+  const { navigation } = props
   return (
     <View style={styles.container}>
-      <AppBar />
       <View style={styles.inner}>
         <Text style={styles.title}>Sign Up</Text>
         <TextInput value="Email Address" style={styles.input} />
@@ -22,13 +20,26 @@ const SignUpScreen = () => {
         <Button
           label="submit"
           onPress={() => {
-            Alert.alert('Submit!')
+            navigation.reset({
+              index: 0,
+              routes: [{ name: 'MemoList' }],
+            })
           }}
         />
         <View style={styles.footer}>
           <Text style={styles.footerText}>Already registerd?</Text>
           <TouchableOpacity>
-            <Text style={styles.footerLinks}>Log In</Text>
+            <Text
+              style={styles.footerLinks}
+              onPress={() => {
+                navigation.reset({
+                  index: 0,
+                  routes: [{ name: 'Login' }],
+                })
+              }}
+            >
+              Log In
+            </Text>
           </TouchableOpacity>
         </View>
       </View>
