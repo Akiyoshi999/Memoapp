@@ -15,12 +15,14 @@ import MemoDetailScreen from './src/screens/MemoDetailScreen'
 
 import { firebaseConfig } from './env'
 
-const Stack = createStackNavigator()
+require('firebase/firestore')
 
 // 初期化されていなかったら初期化
 if (firebase.apps.length === 0) {
   firebase.initializeApp(firebaseConfig)
 }
+
+const Stack = createStackNavigator()
 
 export default function App() {
   return (
