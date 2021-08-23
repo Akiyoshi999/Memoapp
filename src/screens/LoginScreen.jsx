@@ -5,7 +5,7 @@ import {
   Text,
   TextInput,
   TouchableOpacity,
-  View,
+  View
 } from 'react-native'
 import firebase from 'firebase'
 
@@ -21,7 +21,7 @@ const LoginScreen = (props) => {
       if (user) {
         navigation.reset({
           index: 0,
-          routes: [{ name: 'MemoList' }],
+          routes: [{ name: 'MemoList' }]
         })
       }
     })
@@ -37,7 +37,7 @@ const LoginScreen = (props) => {
         console.log(user.uid)
         navigation.reset({
           index: 0,
-          routes: [{ name: 'MemoList' }],
+          routes: [{ name: 'MemoList' }]
         })
       })
       .catch((error) => {
@@ -81,7 +81,7 @@ const LoginScreen = (props) => {
               onPress={() => {
                 navigation.reset({
                   index: 0,
-                  routes: [{ name: 'SignUp' }],
+                  routes: [{ name: 'SignUp' }]
                 })
               }}
             >
@@ -97,17 +97,17 @@ const LoginScreen = (props) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F0F4F8',
+    backgroundColor: '#F0F4F8'
   },
   inner: {
     paddingHorizontal: 27,
-    paddingVertical: 24,
+    paddingVertical: 24
   },
   title: {
     fontSize: 24,
     lineHeight: 32,
     fontWeight: 'bold',
-    marginBottom: 34,
+    marginBottom: 34
   },
   input: {
     fontSize: 16,
@@ -116,22 +116,22 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     backgroundColor: '#ffffff',
     paddingHorizontal: 8,
-    marginBottom: 16,
+    marginBottom: 16
   },
 
   footerText: {
     fontSize: 14,
     lineHeight: 24,
-    marginRight: 8,
+    marginRight: 8
   },
   footerLinks: {
     fontSize: 14,
     lineHeight: 24,
-    color: '#467FD3',
+    color: '#467FD3'
   },
   footer: {
-    flexDirection: 'row',
-  },
+    flexDirection: 'row'
+  }
 })
 
 export default LoginScreen

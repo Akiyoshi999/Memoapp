@@ -20,12 +20,12 @@ const Icon = (props) => {
 Icon.propTypes = {
   name: oneOf(['plus', 'delete', 'pencil', 'check']).isRequired,
   size: number,
-  color: string,
+  color: string
 }
 
 Icon.defaultProps = {
   size: 24,
-  color: '#000000',
+  color: '#000000'
 }
 
 export default Icon

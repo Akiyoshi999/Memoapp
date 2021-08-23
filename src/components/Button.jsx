@@ -13,11 +13,11 @@ const Button = (props) => {
 
 Button.propTypes = {
   label: string.isRequired,
-  onPress: func,
+  onPress: func
 }
 
 Button.defaultProps = {
-  onPress: null,
+  onPress: null
 }
 
 const styles = StyleSheet.create({
@@ -25,15 +25,15 @@ const styles = StyleSheet.create({
     backgroundColor: '#467FD3',
     borderRadius: 4,
     alignSelf: 'flex-start',
-    marginBottom: 24,
+    marginBottom: 24
   },
   buttonLabel: {
     fontSize: 16,
     lineHeight: 32,
     paddingHorizontal: 24,
     paddingVertical: 8,
-    color: '#ffffff',
-  },
+    color: '#ffffff'
+  }
 })
 
 export default Button

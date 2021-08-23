@@ -31,34 +31,34 @@ const MemoDetailScreen = (props) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#ffffff',
+    backgroundColor: '#ffffff'
   },
   memoHeader: {
     backgroundColor: '#467FD3',
     height: 96,
     justifyContent: 'center',
     paddingVertical: 24,
-    paddingHorizontal: 19,
+    paddingHorizontal: 19
   },
   memoTitle: {
     color: '#ffffff',
     fontSize: 20,
     lineHeight: 32,
-    fontWeight: 'bold',
+    fontWeight: 'bold'
   },
   memoData: {
     color: '#ffffff',
     fontSize: 12,
-    lineHeight: 16,
+    lineHeight: 16
   },
   memoBody: {
     paddingVertical: 32,
-    paddingHorizontal: 27,
+    paddingHorizontal: 27
   },
   memoText: {
     fontSize: 16,
-    lineHeight: 24,
-  },
+    lineHeight: 24
+  }
 })
 
 export default MemoDetailScreen

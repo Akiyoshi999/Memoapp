@@ -13,7 +13,7 @@ const LogOutButton = () => {
       .then(() => {
         navigation.reset({
           index: 0,
-          routes: [{ name: 'Login' }],
+          routes: [{ name: 'Login' }]
         })
       })
       .catch(() => {
@@ -30,12 +30,12 @@ const LogOutButton = () => {
 const styles = StyleSheet.create({
   container: {
     paddingHorizontal: 12,
-    paddingVertical: 4,
+    paddingVertical: 4
   },
   label: {
     fontSize: 14,
-    color: 'rgba(255,255,255,0.7)',
-  },
+    color: 'rgba(255,255,255,0.7)'
+  }
 })
 
 export default LogOutButton

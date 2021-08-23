@@ -16,11 +16,16 @@
     "no-use-before-define": 0,
     "react/prop-types": ["error", { "ignore": ["navigation"] }],
     "semi": ["error", "never"],
-    "arrow-body-style": ["error", "always"],
     "object-curly-newline": [
       "error",
       {
         "ImportDeclaration": { "multiline": true, "minProperties": 5 }
+      }
+    ],
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "never"
       }
     ]
   }

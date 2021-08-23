@@ -19,7 +19,7 @@ export default function KeyboardSafeView({ children, style }) {
   useEffect(() => {
     if (
       [initialViewHeight, animatedViewHeight, viewHeight].some(
-        (val) => { return val === null },
+        (val) => { return val === null }
       )
     ) {
       return
@@ -30,13 +30,13 @@ export default function KeyboardSafeView({ children, style }) {
       Animated.timing(animatedViewHeight.current, {
         toValue: initialViewHeight.current,
         duration: 300,
-        useNativeDriver: false,
+        useNativeDriver: false
       }).start()
     } else {
       Animated.timing(animatedViewHeight.current, {
         toValue: viewHeight,
         duration: 300,
-        useNativeDriver: false,
+        useNativeDriver: false
       }).start()
     }
   }, [viewHeight])
@@ -65,7 +65,7 @@ export default function KeyboardSafeView({ children, style }) {
   const animatedStyle = viewHeight
     ? {
       height: animatedViewHeight.current,
-      flex: 0,
+      flex: 0
     }
     : {}
   return (
@@ -77,9 +77,9 @@ export default function KeyboardSafeView({ children, style }) {
 
 KeyboardSafeView.propTypes = {
   children: node.isRequired,
-  style: ViewPropTypes.style,
+  style: ViewPropTypes.style
 }
 
 KeyboardSafeView.defaultProps = {
-  style: null,
+  style: null
 }

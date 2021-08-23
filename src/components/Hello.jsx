@@ -17,12 +17,12 @@ function Hello(props) {
 Hello.propTypes = {
   children: string.isRequired,
   bang: bool,
-  style: shape(),
+  style: shape()
 }
 
 Hello.defaultProps = {
   bang: false,
-  style: null,
+  style: null
 }
 
 const styles = StyleSheet.create({
@@ -31,8 +31,8 @@ const styles = StyleSheet.create({
     backgroundColor: 'blue',
     fontSize: 40,
     fontWeight: 'bold',
-    padding: 16,
-  },
+    padding: 16
+  }
 })
 
 export default Hello

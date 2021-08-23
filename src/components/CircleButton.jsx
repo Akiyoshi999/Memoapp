@@ -16,12 +16,12 @@ const CircleButton = (props) => {
 CircleButton.propTypes = {
   style: shape(),
   name: string.isRequired,
-  onPress: func,
+  onPress: func
 }
 
 CircleButton.defaultProps = {
   style: null,
-  onPress: null,
+  onPress: null
 }
 
 const styles = StyleSheet.create({
@@ -38,13 +38,13 @@ const styles = StyleSheet.create({
     shadowColor: '#000000',
     shadowOffset: { width: 0, height: 8 },
     shadowOpacity: 0.25,
-    shadowRadius: 8,
+    shadowRadius: 8
   },
   circleButtonLabel: {
     color: '#fff',
     fontSize: 40,
-    lineHeight: 40,
-  },
+    lineHeight: 40
+  }
 })
 
 export default CircleButton
