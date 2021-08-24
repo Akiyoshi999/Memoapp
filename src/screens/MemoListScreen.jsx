@@ -12,9 +12,7 @@ const MemoListScreen = (props) => {
 
   useEffect(() => {
     navigation.setOptions({
-      headerRight: () => {
-        return <LogOutButton />
-      }
+      headerRight: () => <LogOutButton />
     })
   }, [])
 

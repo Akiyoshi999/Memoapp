@@ -19,7 +19,7 @@ export default function KeyboardSafeView({ children, style }) {
   useEffect(() => {
     if (
       [initialViewHeight, animatedViewHeight, viewHeight].some(
-        (val) => { return val === null }
+        (val) => val === null
       )
     ) {
       return
