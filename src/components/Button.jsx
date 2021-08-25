@@ -1,11 +1,11 @@
-import { func, string } from 'prop-types'
+import { func, shape, string } from 'prop-types'
 import React from 'react'
 import { StyleSheet, Text, TouchableOpacity } from 'react-native'
 
 const Button = (props) => {
-  const { label, onPress } = props
+  const { label, onPress, style } = props
   return (
-    <TouchableOpacity style={styles.buttonContainer} onPress={onPress}>
+    <TouchableOpacity style={[styles.buttonContainer, style]} onPress={onPress}>
       <Text style={styles.buttonLabel}>{label}</Text>
     </TouchableOpacity>
   )
@@ -13,11 +13,13 @@ const Button = (props) => {
 
 Button.propTypes = {
   label: string.isRequired,
-  onPress: func
+  onPress: func,
+  style: shape()
 }
 
 Button.defaultProps = {
-  onPress: null
+  onPress: null,
+  style: null
 }
 
 const styles = StyleSheet.create({
