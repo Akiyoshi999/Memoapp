@@ -38,20 +38,18 @@ const LoginScreen = (props) => {
     firebase
       .auth()
       .signInWithEmailAndPassword(email, password)
-      .then((userCredential) => {
-        const { user } = userCredential
-        console.log(user.uid)
+      .then(() => {
         navigation.reset({
           index: 0,
           routes: [{ name: 'MemoList' }]
         })
-        setLoading(false)
       })
       .catch((error) => {
         const errorMsg = translateErrors(error.code)
-        console.log(error.code, error.message)
-        setLoading(false)
         Alert.alert(errorMsg.title, errorMsg.description)
+      })
+      .then(() => {
+        setLoading(false)
       })
   }
 

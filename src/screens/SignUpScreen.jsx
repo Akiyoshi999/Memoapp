@@ -21,9 +21,7 @@ const SignUpScreen = (props) => {
     firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
-      .then((userCredential) => {
-        const { user } = userCredential
-        console.log(user.uid)
+      .then(() => {
         navigation.reset({
           index: 0,
           routes: [{ name: 'MemoList' }]
@@ -31,7 +29,6 @@ const SignUpScreen = (props) => {
       })
       .catch((error) => {
         const errorMsg = translateErrors(error.code)
-        console.log(error.code, error.message)
         Alert.alert(errorMsg.title, errorMsg.description)
       })
   }

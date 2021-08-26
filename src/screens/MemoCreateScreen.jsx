@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
-import { StyleSheet, TextInput, View } from 'react-native'
+import { Alert, StyleSheet, TextInput, View } from 'react-native'
 
 import firebase from 'firebase'
 
 import CircleButton from '../components/CircleButton'
 import KeyboardSafeView from '../components/KeyBoradSafeView'
+import { translateErrors } from '../utils'
 
 const MemoCreateScreen = (props) => {
   const { navigation } = props
@@ -19,12 +20,12 @@ const MemoCreateScreen = (props) => {
         bodyText,
         updatedAt: new Date()
       })
-      .then((docRef) => {
-        console.log('Created!', docRef.id)
+      .then(() => {
         navigation.goBack()
       })
       .catch((error) => {
-        console.log('Error:', error)
+        const errorMsg = translateErrors(error.code)
+        Alert.alert(errorMsg.title, errorMsg.bodyText)
       })
   }
 
