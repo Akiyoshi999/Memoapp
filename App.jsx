@@ -2,9 +2,10 @@ import React from 'react'
 import { NavigationContainer } from '@react-navigation/native'
 import {
   CardStyleInterpolators,
-  createStackNavigator,
+  createStackNavigator
 } from '@react-navigation/stack'
 import firebase from 'firebase'
+import { LogBox } from 'react-native'
 
 import LoginScreen from './src/screens/LoginScreen'
 import MemoCreateScreen from './src/screens/MemoCreateScreen'
@@ -23,6 +24,7 @@ if (firebase.apps.length === 0) {
 }
 
 const Stack = createStackNavigator()
+LogBox.ignoreLogs(['setting a timer'])
 
 export default function App() {
   return (
@@ -37,7 +39,7 @@ export default function App() {
           headerBackTitle: 'Back',
           cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
           gestureEnabled: true,
-          gestureDirection: 'horizontal',
+          gestureDirection: 'horizontal'
         }}
       >
         <Stack.Screen name="MemoList" component={MemoListScreen} />
@@ -49,7 +51,7 @@ export default function App() {
           component={SignUpScreen}
           options={{
             cardStyleInterpolator:
-              CardStyleInterpolators.forFadeFromBottomAndroid,
+              CardStyleInterpolators.forFadeFromBottomAndroid
           }}
         />
         <Stack.Screen
@@ -57,7 +59,7 @@ export default function App() {
           component={LoginScreen}
           options={{
             cardStyleInterpolator:
-              CardStyleInterpolators.forFadeFromBottomAndroid,
+              CardStyleInterpolators.forFadeFromBottomAndroid
           }}
         />
       </Stack.Navigator>
