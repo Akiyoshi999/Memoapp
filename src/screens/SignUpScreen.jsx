@@ -10,6 +10,7 @@ import {
 import firebase from 'firebase'
 
 import Button from '../components/Button'
+import { translateErrors } from '../utils'
 
 const SignUpScreen = (props) => {
   const { navigation } = props
@@ -29,8 +30,9 @@ const SignUpScreen = (props) => {
         })
       })
       .catch((error) => {
+        const errorMsg = translateErrors(error.code)
         console.log(error.code, error.message)
-        Alert.alert(error.code)
+        Alert.alert(errorMsg.title, errorMsg.description)
       })
   }
 

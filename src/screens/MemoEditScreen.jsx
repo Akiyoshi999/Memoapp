@@ -5,6 +5,7 @@ import firebase from 'firebase'
 
 import CircleButton from '../components/CircleButton'
 import KeyboardSafeView from '../components/KeyBoradSafeView'
+import { translateErrors } from '../utils'
 
 const MemoEditScreen = (props) => {
   const { navigation, route } = props
@@ -27,8 +28,9 @@ const MemoEditScreen = (props) => {
         .then(() => {
           navigation.goBack()
         })
-        .catch((err) => {
-          Alert.alert(err.code)
+        .catch((error) => {
+          const errorMsg = translateErrors(error.code)
+          Alert.alert(errorMsg.title, errorMsg.description)
         })
     }
   }
